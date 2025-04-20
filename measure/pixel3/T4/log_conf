@@ -1,0 +1,5 @@
+columns = [
+    "time", "temp_big0", "temp_big1", "temp_big2", "temp_big3", "temp_little0", "temp_little1", "temp_little2", "temp_little3", 
+    "temp_gpu", "temp_modem0", "temp_modem1",
+    "freq0", "freq1", "freq2", "freq3", "freq4", "freq5", "freq6", "freq7", "freq_gpu", "util_gpu"
+]
