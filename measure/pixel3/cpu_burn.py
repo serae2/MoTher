@@ -1,7 +1,7 @@
 import time, os
 from multiprocessing import Process
 
-stop_flag = False 
+stop_flag = False ##
 
 def burn():
     while not stop_flag:
