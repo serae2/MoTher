@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 log_path = "/home/serae/Desktop/measure/pixel3/T5/log.txt" 
 
 columns = [
-    "time", "temp_big0", "temp_big1", "temp_big2", "temp_big3", "temp_little0", "temp_little1", "temp_little2", "temp_little3", 
+    "time", "temp_little0", "temp_little1", "temp_little2", "temp_little3", "temp_big0", "temp_big1", "temp_big2", "temp_big3", 
     "temp_gpu", "temp_modem0", "temp_modem1",
     "freq0", "freq1", "freq2", "freq3", "freq4", "freq5", "freq6", "freq7", "freq_gpu",
     "cool_cur_cpu0", "cool_cur_cpu1", "cool_cur_cpu2", "cool_cur_cpu3", "cool_cur_cpu4", "cool_cur_cpu5", "cool_cur_cpu6", "cool_cur_cpu7",

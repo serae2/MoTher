@@ -8,7 +8,7 @@ log_path = "/home/serae/Desktop/measure/log.txt"
 columns = [
     "time", "temp_big", "temp_mid", "temp_little",
     "temp_gpu", "temp_modem", "temp_soc",
-    "freq0", "freq1", "freq2", "freq3", "freq4", "freq5", "freq6", "freq7", "power"
+    "freq0", "freq1", "freq2", "freq3", "freq4", "freq5", "freq6", "freq7", "freq_gpu", "power"
 ] # "freq_big_1"
 
 
@@ -53,6 +53,7 @@ ax2.plot(df["time"].values, df["freq3"].values, label="CPU_LITTLE3 Freq (MHz)", 
 ax2.plot(df["time"].values, df["freq2"].values, label="CPU_LITTLE2 Freq (MHz)", color="green", alpha=0.8, linestyle="--")
 ax2.plot(df["time"].values, df["freq1"].values, label="CPU_LITTLE1 Freq (MHz)", color="green", alpha=0.6, linestyle="--")
 ax2.plot(df["time"].values, df["freq0"].values, label="CPU_LITTLE0 Freq (MHz)", color="green", alpha=0.4, linestyle="--")
+ax2.plot(df["time"].values, df["freq_gpu"].values, label="GPU Freq (MHz)", color="green", alpha=1, linestyle="--", zorder=1)
 ax2.set_ylabel("Frequency (MHz)")
 ax2.legend(loc="upper right")
 

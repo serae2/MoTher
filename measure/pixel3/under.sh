@@ -25,23 +25,23 @@ LOG_PATH="/sdcard/MoTher/log.txt"
 while true; do
     TIME=$(date "+%Y-%m-%d %H:%M:%S.%3N")
 
-    TEMP_CPU0=$(cat /sys/class/thermal/thermal_zone0/temp 2>/dev/null)
-    TEMP_CPU1=$(cat /sys/class/thermal/thermal_zone1/temp 2>/dev/null)
-    TEMP_CPU2=$(cat /sys/class/thermal/thermal_zone2/temp 2>/dev/null)
-    TEMP_CPU3=$(cat /sys/class/thermal/thermal_zone3/temp 2>/dev/null)
-    TEMP_CPU4=$(cat /sys/class/thermal/thermal_zone4/temp 2>/dev/null)
-    TEMP_CPU5=$(cat /sys/class/thermal/thermal_zone5/temp 2>/dev/null)
-    TEMP_CPU6=$(cat /sys/class/thermal/thermal_zone6/temp 2>/dev/null)
-    TEMP_CPU7=$(cat /sys/class/thermal/thermal_zone7/temp 2>/dev/null)
+    TEMP_CPU0=$(cat /sys/class/thermal/thermal_zone0/temp 2>/dev/null) #little
+    TEMP_CPU1=$(cat /sys/class/thermal/thermal_zone1/temp 2>/dev/null) #little
+    TEMP_CPU2=$(cat /sys/class/thermal/thermal_zone2/temp 2>/dev/null) #little
+    TEMP_CPU3=$(cat /sys/class/thermal/thermal_zone3/temp 2>/dev/null) #little
+    TEMP_CPU4=$(cat /sys/class/thermal/thermal_zone4/temp 2>/dev/null) #big
+    TEMP_CPU5=$(cat /sys/class/thermal/thermal_zone5/temp 2>/dev/null) #big
+    TEMP_CPU6=$(cat /sys/class/thermal/thermal_zone6/temp 2>/dev/null) #big
+    TEMP_CPU7=$(cat /sys/class/thermal/thermal_zone7/temp 2>/dev/null) #big
 
-    FREQ_CPU0=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq 2>/dev/null)
-    FREQ_CPU1=$(cat /sys/devices/system/cpu/cpu1/cpufreq/scaling_cur_freq 2>/dev/null)
-    FREQ_CPU2=$(cat /sys/devices/system/cpu/cpu2/cpufreq/scaling_cur_freq 2>/dev/null)
-    FREQ_CPU3=$(cat /sys/devices/system/cpu/cpu3/cpufreq/scaling_cur_freq 2>/dev/null)
-    FREQ_CPU4=$(cat /sys/devices/system/cpu/cpu4/cpufreq/scaling_cur_freq 2>/dev/null)
-    FREQ_CPU5=$(cat /sys/devices/system/cpu/cpu5/cpufreq/scaling_cur_freq 2>/dev/null)
-    FREQ_CPU6=$(cat /sys/devices/system/cpu/cpu6/cpufreq/scaling_cur_freq 2>/dev/null)
-    FREQ_CPU7=$(cat /sys/devices/system/cpu/cpu7/cpufreq/scaling_cur_freq 2>/dev/null)
+    FREQ_CPU0=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq 2>/dev/null) #little
+    FREQ_CPU1=$(cat /sys/devices/system/cpu/cpu1/cpufreq/scaling_cur_freq 2>/dev/null) #little
+    FREQ_CPU2=$(cat /sys/devices/system/cpu/cpu2/cpufreq/scaling_cur_freq 2>/dev/null) #little
+    FREQ_CPU3=$(cat /sys/devices/system/cpu/cpu3/cpufreq/scaling_cur_freq 2>/dev/null) #little
+    FREQ_CPU4=$(cat /sys/devices/system/cpu/cpu4/cpufreq/scaling_cur_freq 2>/dev/null) #big
+    FREQ_CPU5=$(cat /sys/devices/system/cpu/cpu5/cpufreq/scaling_cur_freq 2>/dev/null) #big
+    FREQ_CPU6=$(cat /sys/devices/system/cpu/cpu6/cpufreq/scaling_cur_freq 2>/dev/null) #big
+    FREQ_CPU7=$(cat /sys/devices/system/cpu/cpu7/cpufreq/scaling_cur_freq 2>/dev/null) #big
 
 
     TEMP_GPU0=$(cat /sys/class/thermal/thermal_zone8/temp 2>/dev/null)

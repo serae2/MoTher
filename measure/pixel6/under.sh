@@ -37,6 +37,7 @@ while true; do
     FREQ_CPU6=$(cat /sys/devices/system/cpu/cpu6/cpufreq/scaling_cur_freq 2>/dev/null)
     FREQ_CPU7=$(cat /sys/devices/system/cpu/cpu7/cpufreq/scaling_cur_freq 2>/dev/null)
     TEMP_GPU=$(cat /sys/class/thermal/thermal_zone3/temp 2>/dev/null)
+    FREQ_GPU=$(cat /sys/devices/platform/1c500000.mali/cur_freq 2>/dev/null)
     TEMP_MODEM=$(cat /sys/class/thermal/thermal_zone15/temp 2>/dev/null)
     TEMP_SOC=$(cat /sys/class/thermal/thermal_zone24/temp 2>/dev/null)
 
@@ -56,7 +57,7 @@ while true; do
 
     POWER=$(echo "$CURR * $VOLT / 1000000" | bc)  # μA * μV → mW
 
-    echo "$TIME,$TEMP_CPU_BIG,$TEMP_CPU_MID,$TEMP_CPU_LITTLE,$TEMP_GPU,$TEMP_MODEM,$TEMP_SOC,$FREQ_CPU0,$FREQ_CPU1,$FREQ_CPU2,$FREQ_CPU3,$FREQ_CPU4,$FREQ_CPU5,$FREQ_CPU6,$FREQ_CPU7,$COOL_REQ_CPU_BIG,$COOL_REQ_CPU_MID,$COOL_REQ_CPU_LITTLE,$COOL_REQ_GPU,$COOL_CUR_CPU_BIG,$COOL_CUR_CPU_MID,$COOL_CUR_CPU_LITTLE,$COOL_CUR_GPU" | tee -a "$LOG_PATH"
+    echo "$TIME,$TEMP_CPU_BIG,$TEMP_CPU_MID,$TEMP_CPU_LITTLE,$TEMP_GPU,$TEMP_MODEM,$TEMP_SOC,$FREQ_CPU0,$FREQ_CPU1,$FREQ_CPU2,$FREQ_CPU3,$FREQ_CPU4,$FREQ_CPU5,$FREQ_CPU6,$FREQ_CPU7,$FREQ_GPU,$COOL_REQ_CPU_BIG,$COOL_REQ_CPU_MID,$COOL_REQ_CPU_LITTLE,$COOL_REQ_GPU,$COOL_CUR_CPU_BIG,$COOL_CUR_CPU_MID,$COOL_CUR_CPU_LITTLE,$COOL_CUR_GPU" | tee -a "$LOG_PATH"
 
 
     #sleep $INTERVAL
