@@ -1,0 +1,7 @@
+am start -a android.intent.action.VIEW -d "https://www.youtube.com/watch?v=uXNU0XgGZhs"
+
+columns = [
+    "time", "temp_big", "temp_mid", "temp_little",
+    "temp_gpu", "temp_modem", "temp_soc",
+    "freq0", "freq1", "freq2", "freq3", "freq4", "freq5", "freq6", "freq7", 
+    "cool_req_big", "cool_req_mid", "cool_req_little", "cool_req_gpu"]

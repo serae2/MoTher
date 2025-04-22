@@ -65,6 +65,32 @@ while true; do
     FREQ_GPU=$(cat /sys/class/kgsl/kgsl-3d0/devfreq/cur_freq 2>/dev/null)
     UTIL_GPU=$(cat /sys/class/kgsl/kgsl-3d0/gpu_busy_percentage 2>/dev/null)
 
+############
+    
+    FREQ_MIN_CPU0=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 2>/dev/null) #little
+    FREQ_MIN_CPU1=$(cat /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq 2>/dev/null) #little
+    FREQ_MIN_CPU2=$(cat /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 2>/dev/null) #little
+    FREQ_MIN_CPU3=$(cat /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq 2>/dev/null) #little
+    FREQ_MIN_CPU4=$(cat /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 2>/dev/null) #little
+    FREQ_MIN_CPU5=$(cat /sys/devices/system/cpu/cpu5/cpufreq/scaling_min_freq 2>/dev/null) #little
+    FREQ_MIN_CPU6=$(cat /sys/devices/system/cpu/cpu6/cpufreq/scaling_min_freq 2>/dev/null) #middle
+    FREQ_MIN_CPU7=$(cat /sys/devices/system/cpu/cpu7/cpufreq/scaling_min_freq 2>/dev/null) #big
+
+    FREQ_MIN_GPU=$(cat /sys/class/kgsl/kgsl-3d0/devfreq/min_freq 2>/dev/null)
+
+    FREQ_MAX_CPU0=$(cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 2>/dev/null) #little
+    FREQ_MAX_CPU1=$(cat /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq 2>/dev/null) #little
+    FREQ_MAX_CPU2=$(cat /sys/devices/system/cpu/cpu2/cpufreq/scaling_max_freq 2>/dev/null) #little
+    FREQ_MAX_CPU3=$(cat /sys/devices/system/cpu/cpu3/cpufreq/scaling_max_freq 2>/dev/null) #little
+    FREQ_MAX_CPU4=$(cat /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq 2>/dev/null) #little
+    FREQ_MAX_CPU5=$(cat /sys/devices/system/cpu/cpu5/cpufreq/scaling_max_freq 2>/dev/null) #little
+    FREQ_MAX_CPU6=$(cat /sys/devices/system/cpu/cpu6/cpufreq/scaling_max_freq 2>/dev/null) #middle
+    FREQ_MAX_CPU7=$(cat /sys/devices/system/cpu/cpu7/cpufreq/scaling_max_freq 2>/dev/null) #big
+
+    FREQ_MAX_GPU=$(cat /sys/class/kgsl/kgsl-3d0/devfreq/max_freq 2>/dev/null)
+    
+############
+
     COOL_CUR_GPU=$(cat /sys/class/thermal/cooling_device14/cur_state 2>/dev/null)
     COOL_CUR_CPU0=$(cat /sys/class/thermal/cooling_device0/cur_state 2>/dev/null) #little
     COOL_CUR_CPU1=$(cat /sys/class/thermal/cooling_device1/cur_state 2>/dev/null) #middle
@@ -81,7 +107,7 @@ while true; do
 
     POWER=$(echo "$CURR * $VOLT / 1000000" | bc)  # μA * μV → mW
 
-    echo "$TIME,$TEMP_CPU_LITTLE_TOT,$TEMP_CPU_BIGMID_TOT,$TEMP_CPU0,$TEMP_CPU1,$TEMP_CPU2,$TEMP_CPU3,$TEMP_CPU4,$TEMP_CPU5,$TEMP_CPU6,$TEMP_CPU7,$TEMP_CPU8,$TEMP_CPU9,$TEMP_GPU0,$TEMP_GPU1,$TEMP_MODEM0,$TEMP_MODEM1,$TEMP_MODEM2,$TEMP_MODEM3,$TEMP_MODEM4,$TEMP_MODEM5,$TEMP_MODEM6,$TEMP_MODEM7,$TEMP_MODEM8,$TEMP_MODEM9,$FREQ_CPU0,$FREQ_CPU1,$FREQ_CPU2,$FREQ_CPU3,$FREQ_CPU4,$FREQ_CPU5,$FREQ_CPU6,$FREQ_CPU7,$FREQ_GPU,$COOL_CUR_CPU0,$COOL_CUR_CPU1,$COOL_CUR_CPU2,$COOL_CUR_CPU3,$COOL_CUR_CPU4,$COOL_CUR_GPU,$COOL_CUR_MODEM0,$COOL_CUR_MODEM1,$COOL_CUR_MODEM2,$COOL_CUR_MODEM3,$UTIL_GPU" | tee -a "$LOG_PATH"
+    echo "$TIME,$TEMP_CPU_LITTLE_TOT,$TEMP_CPU_BIGMID_TOT,$TEMP_CPU0,$TEMP_CPU1,$TEMP_CPU2,$TEMP_CPU3,$TEMP_CPU4,$TEMP_CPU5,$TEMP_CPU6,$TEMP_CPU7,$TEMP_CPU8,$TEMP_CPU9,$TEMP_GPU0,$TEMP_GPU1,$TEMP_MODEM0,$TEMP_MODEM1,$TEMP_MODEM2,$TEMP_MODEM3,$TEMP_MODEM4,$TEMP_MODEM5,$TEMP_MODEM6,$TEMP_MODEM7,$TEMP_MODEM8,$TEMP_MODEM9,$FREQ_CPU0,$FREQ_CPU1,$FREQ_CPU2,$FREQ_CPU3,$FREQ_CPU4,$FREQ_CPU5,$FREQ_CPU6,$FREQ_CPU7,$FREQ_GPU,$FREQ_MIN_CPU0,$FREQ_MIN_CPU1,$FREQ_MIN_CPU2,$FREQ_MIN_CPU3,$FREQ_MIN_CPU4,$FREQ_MIN_CPU5,$FREQ_MIN_CPU6,$FREQ_MIN_CPU7,$FREQ_MIN_GPU,$FREQ_MAX_CPU0,$FREQ_MAX_CPU1,$FREQ_MAX_CPU2,$FREQ_MAX_CPU3,$FREQ_MAX_CPU4,$FREQ_MAX_CPU5,$FREQ_MAX_CPU6,$FREQ_MAX_CPU7,$FREQ_MAX_GPU,$COOL_CUR_CPU0,$COOL_CUR_CPU1,$COOL_CUR_CPU2,$COOL_CUR_CPU3,$COOL_CUR_CPU4,$COOL_CUR_GPU,$COOL_CUR_MODEM0,$COOL_CUR_MODEM1,$COOL_CUR_MODEM2,$COOL_CUR_MODEM3,$UTIL_GPU" | tee -a "$LOG_PATH"
 
     #sleep $INTERVAL
 done
