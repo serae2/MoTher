@@ -1,0 +1,11 @@
+usrp에서 iperf tcp full (600초)
+
+columns = [
+    "time", "temp_cpu_little_tot", "temp_cpu_bigmid_tot", "temp_little0", "temp_little1", "temp_little2", "temp_little3", "temp_little4", "temp_little5", "temp_mid", "temp_big", "temp_cpu8", "temp_cpu9",
+    "temp_gpu0", "temp_gpu1", "temp_modem0", "temp_modem1", "temp_modem2", "temp_modem3", "temp_modem4", "temp_modem5", "temp_modem6", "temp_modem7", "temp_modem8", "temp_modem9",
+    "freq0", "freq1", "freq2", "freq3", "freq4", "freq5", "freq6", "freq7", "freq_gpu",
+    "min_freq0", "min_freq1", "min_freq2", "min_freq3", "min_freq4", "min_freq5", "min_freq6", "min_freq7", "min_freq_gpu",
+    "max_freq0", "max_freq1", "max_freq2", "max_freq3", "max_freq4", "max_freq5", "max_freq6", "max_freq7", "max_freq_gpu",
+    "cool_cur_cpu0", "cool_cur_cpu1", "cool_cur_cpu2", "cool_cur_cpu3", "cool_cur_cpu4", "cool_cur_gpu", "cool_cur_modem0", "cool_cur_modem1", "cool_cur_modem2", "cool_cur_modem3",
+    "util_cpu0","util_cpu1","util_cpu2","util_cpu3","util_cpu4","util_cpu5","util_cpu6","util_cpu7","util_gpu","power"
+] 
